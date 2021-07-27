@@ -1,13 +1,14 @@
 from PyQt5 import uic, QtWidgets
 import mysql.connector
 # import re
+from decouple import config
 
 
 banco = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="",
-    database="cadastro_produtos"
+    host= config("HOST"),
+    user=  config("DB_USER"),
+    passwd=  config("DB_KEY"),
+    database= config("DB")
 )
 
 
